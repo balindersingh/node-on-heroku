@@ -1,0 +1,30 @@
+<html>
+    <title>App UI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/stylesheets/main.css">
+<body>
+    <div id="app-main">
+           <nav> <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fr-view" href="/" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fr-view" href="/pdf" >PDF</a>
+                    </li>
+                    </ul>
+                </nav>
+    <form action="/action_page.php">
+        <div class="form-group">
+          <label for="sfedition">Provide link to a page</label>
+          <input type="text" class="form-control" id="websiteLink">
+        </div>
+        <input id="submitBtn" type="button" onclick="createPDF();" class="btn btn-default" value="Create PDF">
+      </form>
+      <div id="msgBox">
+        
+      </div>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script rel="text/js" src="../static/app.js"></script>
+</body>
+</html>

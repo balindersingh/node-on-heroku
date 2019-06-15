@@ -1,0 +1,77 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+}
+nav li{
+  font-family: 'Roboto', sans-serif;
+  list-style-type: none;
+  padding: 20px;
+  font-weight: 600;
+}
+nav{clear: both;
+float: none;
+display: block;
+position: relative; 
+overflow: hidden;
+}
+#app-main{
+max-width: 800px;
+margin: 0px auto;
+}
+/*not found*/
+.notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.notfound {
+  max-width: 560px;
+  width: 100%;
+  padding-left: 160px;
+  line-height: 1.1;
+}
+.notfound .notfound-404 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  background-image: url(../images/sad.png);
+  background-size: cover;
+}
+.notfound h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 65px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #151723;
+  text-transform: uppercase;
+}
+.notfound h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  color: #151723;
+}
+.notfound p {
+  font-family: 'Roboto', sans-serif;
+  color: #999fa5;
+  font-weight: 400;
+}
+.notfound a {
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #388dbc;
+}
