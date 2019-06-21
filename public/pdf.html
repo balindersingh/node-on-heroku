@@ -18,6 +18,16 @@
           <label for="sfedition">Provide link to a page</label>
           <input type="text" class="form-control" id="websiteLink">
         </div>
+        <hr>
+        <h4>OR</h4>
+        <div class="form-group">
+            <label for="templateContent">Provide HTML</label>
+            <textarea   class="form-control" id="templateContent"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="mergeFieldsContentData">Merge fields if using {{}} in above HTML</label>
+            <textarea   class="form-control" id="mergeFieldsContentData"></textarea>
+          </div>
         <input id="submitBtn" type="button" onclick="createPDF();" class="btn btn-default" value="Create PDF">
       </form>
       <div id="msgBox">

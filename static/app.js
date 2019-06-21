@@ -59,8 +59,12 @@ function createAnOrg(){
 }
 function createPDF(){
     var websiteLink = document.getElementById('websiteLink').value;
+    var templateContent = document.getElementById('templateContent').value;
+    var mergeFieldsContentData = document.getElementById('mergeFieldsContentData').value;
     var url ="/pdf";
     var dataObj = "websiteLink="+websiteLink;
+    dataObj+="&templateContent="+templateContent;
+    dataObj+="&mergeFieldsContentData="+mergeFieldsContentData;
     processProgress("Processing...",false);
     /*var params = typeof dataInput == 'string' ? dataInput : Object.keys(dataInput).map(
         function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(dataInput[k]) }

@@ -44,10 +44,14 @@ var pdfPage = function (request, response, httpMethod,body) {
         console.log('HTML:'+body);
         var postedBody = qs.parse(body);
         var websiteLink = postedBody["websiteLink"];
+        var templateContent = postedBody["templateContent"];
+        var mergeFieldsContentData = postedBody["mergeFieldsContent"];
         try{
-            console.log('WEBSITE LINK:'+websiteLink);
             var sampleData = {"name":"Balinder Singh","jobtitle":"Software Engineer","company":"Formstack","location":"Canada","profession":"Web and Application development"}
-            var contentInfoObj = pdfService.getContentInfo(websiteLink,"",sampleData);
+            if(mergeFieldsContentData===undefined || mergeFieldsContentData==""){
+                mergeFieldsContentData = sampleData;
+            }
+            var contentInfoObj = pdfService.getContentInfo(websiteLink,templateContent,mergeFieldsContentData);
             pdfService.createPDFFromHTML(contentInfoObj).then((pdfName) => {
                 responseCallback("SUCEES_PDF_GENERATED","<a target='_blank' href='" + pdfName+"'>download</a>",response);
                 /*response.end(JSON.stringify({
