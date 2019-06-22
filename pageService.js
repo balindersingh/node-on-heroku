@@ -41,7 +41,6 @@ var appUIPage = function (request, response, httpMethod,body) {
 };
 var pdfPage = function (request, response, httpMethod,body) {
     if(httpMethod == constantObj.HTTP_METHOD_TYPE.POST){
-        console.log('HTML:'+body);
         var postedBody = qs.parse(body);
         var websiteLink = postedBody["websiteLink"];
         var templateContent = postedBody["templateContent"];
@@ -53,13 +52,9 @@ var pdfPage = function (request, response, httpMethod,body) {
             }
             var contentInfoObj = pdfService.getContentInfo(websiteLink,templateContent,mergeFieldsContentData);
             pdfService.createPDFFromHTML(contentInfoObj).then((pdfName) => {
-                responseCallback("SUCEES_PDF_GENERATED","<a target='_blank' href='" + pdfName+"'>download</a>",response);
-                /*response.end(JSON.stringify({
-                    "sucess": "PDF is generated successfully",
-                    "sucessDetail": "<a target='_blank' href='" + pdfName+">download</a>"
-                  }));*/
+                var fileName = pdfName.substring(pdfName.lastIndexOf('/'));
+                responseCallback("SUCEES_PDF_GENERATED","<a target='_blank' href='" + pdfName+"'>"+fileName+"</a>",response);
             });
-            //responseCallback("PDF Success","Test",response);
         }catch(err){
             responseCallback("ERROR_UNKNOWN_PDF",err,response);
         }

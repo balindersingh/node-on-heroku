@@ -14,7 +14,7 @@ var createPDF = async function(contentInfoObj){
 	
 	var pdfPath = path.join(path.resolve(__dirname, './static/pdfs/'), pdfName);
 
-	var options = {
+	var optionsOriginal = {
 		width: '1230px',
 		headerTemplate: "<p>HEADER</p>",
 		footerTemplate: "<p>FOOTER</p>",
@@ -25,7 +25,16 @@ var createPDF = async function(contentInfoObj){
 		},
 		printBackground: false,
 		path: pdfPath
-	}
+	};
+	var options = {
+		displayHeaderFooter: true,
+		margin: {
+			top: "10px",
+			bottom: "30px"
+		},
+		printBackground: true,
+		path: pdfPath
+	};
 
 	const browser = await puppeteer.launch({
 		args: ['--no-sandbox'],
